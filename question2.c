@@ -1,8 +1,4 @@
-#include <float.h>
-#include <limits.h>
-#include <math.h>
 #include <pthread.h>
-#include <semaphore.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -24,7 +20,7 @@ void *guest(void *t)
 
     // stare at the vase and leave
     if (verbose)
-        printf("Guest %d has looked at the vase.\n", id);
+        printf("Guest %d has looked at the vase\n", id);
     turn++;
 
     return NULL;

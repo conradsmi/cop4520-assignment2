@@ -6,7 +6,7 @@ This was written in C and compiled on gcc 10.2.1 (Debian 10.2.1-6).
 After cloning the repository, compile and run using these commands:
 
     gcc question1.c -o question1 -lpthread
-    ./question1 <n>
+    time ./question1 <n>
 
 ...where `n` is the number of guests/threads to spawn.
 The output will be printed to stdout.
@@ -27,7 +27,7 @@ This was also written in C and compiled on the same compiler.
 Compile and run using these commands:
 
     gcc question2.c -o question2 -lpthread
-    ./question2 <n> <verbose>
+    time ./question2 <n> <verbose>
 
 ...where `n` is the number of guests/threads to spawn and `verbose` is either 0 or 1 (if 1, the program will print out every guest that has visited the vase).
 
