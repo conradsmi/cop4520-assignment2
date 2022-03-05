@@ -33,9 +33,15 @@ Compile and run using these commands:
 
 ### Description
 
-This problem is much simpler than problem 1. All guests get summoned and are allowed to enqueue to see the vase. When it is their turn, they will look at the vase then notify the next person in line that it's their turn.
+This problem is much simpler than problem 1. I chose to implement option 3. All guests get summoned and are allowed to enqueue to see the vase. When it is their turn, they will look at the vase then notify the next person in line that it's their turn.
 
 In practice, enqueueing happens so fast that guests/threads generally enqueue themselves in sequential order. You can see this behavior yourself with the verbose mode enabled.
+
+Option 1 is a naive method of letting all threads access a resource. Any implementation would not be starvation-free because the same thread could repeatedly look at the vase, and all other threads would be forced to spin and cause contention.
+
+Option 2 is only slightly better, though is still not starvation-free. The thread could still repeatedly check the vase after setting the sign to "AVAILABLE" then quickly setting it back to "BUSY" & reentering.
+
+Option 3 is the only option that is starvation-free. By letting threads enqueue, we ensure that every thread is guaranteed to be able to visit the vase by saving a spot for themselves in line.
 
 ## Sources
 
